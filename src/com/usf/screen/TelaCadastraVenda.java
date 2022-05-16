@@ -6,12 +6,12 @@ import java.awt.event.ActionListener;
 
 public class TelaCadastraVenda extends JFrame {
     private JButton botaoVoltaTelaInicial;
-    private JTextField horaTextFild;
     private JComboBox produtoComboBox;
     private JSpinner qtdSpinner;
     private JPanel telaCadastro;
-    private JFormattedTextField dataTextField;
     private JTable table1;
+    private JButton botaoAddProduto;
+    private JButton cadastrarCompraButton;
 
     public TelaCadastraVenda(String title){
         super(title);

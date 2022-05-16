@@ -14,6 +14,7 @@ public class TelaProdutos extends JFrame {
     private JTable tabelaProdutos;
     private JPanel produtosScreen;
     private JButton botaoVoltarTelaInicial;
+    private JTextField textField1;
 
     public TelaProdutos(String title){
 

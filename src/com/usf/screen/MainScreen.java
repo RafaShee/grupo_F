@@ -8,6 +8,7 @@ public class MainScreen extends JFrame {
     private JButton botaoListaP;
     private JButton botaoCadastraV;
     private JPanel mainScreen;
+    private JButton cadastrarProdutosButton;
 
     public MainScreen(String title){
         super(title);
@@ -29,6 +30,14 @@ public class MainScreen extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = new TelaCadastraVenda("Tela de cadastro");
+                frame.setVisible(true);
+                dispose();
+            }
+        });
+        cadastrarProdutosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new TelaCadastraProduto("Tala cadastro de produtos");
                 frame.setVisible(true);
                 dispose();
             }

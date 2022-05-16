@@ -11,7 +11,7 @@ public class TelaCadastraVenda extends JFrame {
     private JPanel telaCadastro;
     private JTable table1;
     private JButton botaoAddProduto;
-    private JButton cadastrarCompraButton;
+    private JButton botaoCadastraVenda;
 
     public TelaCadastraVenda(String title){
         super(title);

@@ -46,7 +46,7 @@ public class TelaProdutos extends JFrame {
 
         tabelaProdutos.getColumnModel().getColumn(0).setPreferredWidth(15);
         tabelaProdutos.getColumnModel().getColumn(1).setPreferredWidth(35);
-        tabelaProdutos.getColumnModel().getColumn(2).setPreferredWidth(20);
+        tabelaProdutos.getColumnModel().getColumn(2).setPreferredWidth(35);
 
         try{
             Connection con = ConnectionFactory.conecta();

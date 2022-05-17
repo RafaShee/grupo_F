@@ -1,14 +1,14 @@
 package com.usf.model;
 
-import java.lang.reflect.Array;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
 public class Venda {
 
     private int idVenda;
-    private String dataVenda;
+    private Date dataVenda = new Date();
     private ArrayList<Produto> listaProdutos;
     private BigDecimal total;
 
@@ -24,11 +24,11 @@ public class Venda {
         this.idVenda = idVenda;
     }
 
-    public String getDataVenda() {
+    public Date getDataVenda() {
         return dataVenda;
     }
 
-    public void setDataVenda(String dataVenda) {
+    public void setDataVenda(Date dataVenda) {
         this.dataVenda = dataVenda;
     }
 

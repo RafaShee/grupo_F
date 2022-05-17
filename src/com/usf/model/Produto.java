@@ -1,14 +1,13 @@
 package com.usf.model;
 
-import org.postgresql.util.PGmoney;
-
 import java.math.BigDecimal;
 
 public class Produto {
 
     private int idProduto;
     private String nome;
-    private BigDecimal valor;
+    private double valor;
+    private int qtd;
 
     public int getIdProduto() {
         return idProduto;
@@ -26,12 +25,24 @@ public class Produto {
         this.nome = nome;
     }
 
-    public BigDecimal getValor() {
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(BigDecimal valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 
+    public int getQtd() {
+        return qtd;
+    }
+
+    public void setQtd(int qtd) {
+        this.qtd = qtd;
+    }
+
+    @Override
+    public String toString(){
+        return this.getNome();
+    }
 }

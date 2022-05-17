@@ -1,6 +1,7 @@
 package com.usf.itabarAplication;
 
 import com.usf.jdbc.ConnectionFactory;
+import com.usf.model.Venda;
 import com.usf.screen.MainScreen;
 
 import javax.swing.*;
@@ -22,5 +23,8 @@ public class ItabarAplication {
 
         JFrame frame = new MainScreen("Tela inicial");
         frame.setVisible(true);
+
+        Venda v = new Venda();
+        System.out.println(v.getDataVenda());
     }
 }

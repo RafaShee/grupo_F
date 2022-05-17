@@ -7,7 +7,7 @@ public class ConnectionFactory {
     public static Connection conecta(){
 
         try {
-            return DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/bd_Itabar", "postgres", "batata");
+            return DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/bd_Itabar", "postgres", "+de8000");
         } catch(SQLException ErroSql){
             throw new RuntimeException("Erro! Não foi possível se conectar: " + ErroSql);
         }

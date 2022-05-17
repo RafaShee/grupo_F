@@ -42,7 +42,7 @@ public class TelaCadastraProduto extends JFrame {
                 try{
                     Produto produto = new Produto();
                     produto.setNome(nomeProdutoTextField.getText());
-                    produto.setValor(BigDecimal.valueOf(Long.parseLong(valorProdutoTextField.getText())));
+                    produto.setValor(Double.parseDouble(valorProdutoTextField.getText()));
 
 
                     ProdutoDAO dao = new ProdutoDAO();
@@ -52,6 +52,9 @@ public class TelaCadastraProduto extends JFrame {
                 } catch (Exception ErroSql){
                     JOptionPane.showMessageDialog(null, "Erro ao cadastrar" + ErroSql);
                 }
+
+                nomeProdutoTextField.setText("");
+                valorProdutoTextField.setText("");
             }
         });
     }

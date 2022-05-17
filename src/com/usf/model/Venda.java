@@ -10,7 +10,7 @@ public class Venda {
     private int idVenda;
     private Date dataVenda = new Date();
     private ArrayList<Produto> listaProdutos;
-    private BigDecimal total;
+    private double total;
 
     public Venda(){
         listaProdutos = new ArrayList<Produto>();
@@ -40,11 +40,11 @@ public class Venda {
         this.listaProdutos = listaProdutos;
     }
 
-    public BigDecimal getTotal() {
+    public double getTotal() {
         return total;
     }
 
-    public void setTotal(BigDecimal total) {
+    public void setTotal(double total) {
         this.total = total;
     }
 }

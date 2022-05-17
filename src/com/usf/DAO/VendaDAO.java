@@ -23,7 +23,7 @@ public class VendaDAO {
             PreparedStatement stmt = conecta.prepareStatement(cmdsql);
             stmt.setDate(1, Date.valueOf(String.valueOf(venda.getDataVenda())));
             stmt.setArray(2, (Array) venda.getListaProdutos());
-            stmt.setBigDecimal(3, venda.getTotal());
+            stmt.setDouble(3, venda.getTotal());
 
             stmt.execute();
 

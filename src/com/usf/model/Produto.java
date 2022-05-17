@@ -1,5 +1,6 @@
 package com.usf.model;
 
+import javax.swing.*;
 import java.math.BigDecimal;
 
 public class Produto {
@@ -7,7 +8,6 @@ public class Produto {
     private int idProduto;
     private String nome;
     private double valor;
-    private int qtd;
 
     public int getIdProduto() {
         return idProduto;
@@ -33,16 +33,14 @@ public class Produto {
         this.valor = valor;
     }
 
-    public int getQtd() {
-        return qtd;
-    }
-
-    public void setQtd(int qtd) {
-        this.qtd = qtd;
-    }
-
     @Override
     public String toString(){
         return this.getNome();
+    }
+
+    public void status(){
+        System.out.println(this.idProduto);
+        System.out.println(this.nome);
+        System.out.println(this.valor);
     }
 }

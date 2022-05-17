@@ -3,6 +3,7 @@ package com.usf.screen;
 import com.usf.DAO.ProdutoDAO;
 import com.usf.DAO.VendaDAO;
 import com.usf.model.Produto;
+import com.usf.model.ProdutoVenda;
 import com.usf.model.Venda;
 
 import javax.swing.*;
@@ -23,6 +24,8 @@ public class TelaCadastraVenda extends JFrame {
     private JButton botaoAddProduto;
     private JButton botaoCadastraVenda;
 
+    private int qtdProduto;
+
     public TelaCadastraVenda(String title){
         super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,6 +33,9 @@ public class TelaCadastraVenda extends JFrame {
         this.setSize(550, 500);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        Venda venda = new Venda();
+
+        List<ProdutoVenda> listaProdutoVenda = new ArrayList<>();
 
         botaoVoltaTelaInicial.addActionListener(new ActionListener() {
             @Override
@@ -60,6 +66,39 @@ public class TelaCadastraVenda extends JFrame {
             @Override
             public void ancestorMoved(AncestorEvent event) {
 
+            }
+        });
+        botaoAddProduto.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ProdutoVenda produtoVenda = new ProdutoVenda();
+
+                Produto produto = (Produto) produtoComboBox.getSelectedItem();
+
+                venda.getListaProdutos().add(produto);
+
+                produtoVenda.setValor(produto.getValor());
+                produtoVenda.setNome(produto.getNome());
+                produtoVenda.setQtd((Integer) qtdSpinner.getValue());
+                produtoVenda.setTotal(produto.getValor() * produtoVenda.getQtd());
+
+                listaProdutoVenda.add(produtoVenda);
+
+//                for(int i = 0; i < listaProdutoVenda.size(); i++){
+//
+//                    System.out.println(listaProdutoVenda.get(i).getNome());
+//                    System.out.println(listaProdutoVenda.get(i).getValor());
+//                    System.out.println(listaProdutoVenda.get(i).getQtd());
+//                    System.out.println(listaProdutoVenda.get(i).getTotal());
+//
+//                }
+
+                for (ProdutoVenda produtoVenda1 : listaProdutoVenda) {
+                    System.out.println(produtoVenda1.getNome());
+                    System.out.println(produtoVenda1.getValor());
+                    System.out.println(produtoVenda1.getQtd());
+                    System.out.println(produtoVenda1.getTotal());
+                }
             }
         });
     }

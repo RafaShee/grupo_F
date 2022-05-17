@@ -8,7 +8,7 @@ import java.util.Date;
 public class Venda {
 
     private int idVenda;
-    private Date dataVenda = new Date();
+    private LocalDate dataVenda = LocalDate.now();
     private ArrayList<Produto> listaProdutos;
     private double total;
 
@@ -24,11 +24,11 @@ public class Venda {
         this.idVenda = idVenda;
     }
 
-    public Date getDataVenda() {
+    public LocalDate getDataVenda() {
         return dataVenda;
     }
 
-    public void setDataVenda(Date dataVenda) {
+    public void setDataVenda(LocalDate dataVenda) {
         this.dataVenda = dataVenda;
     }
 

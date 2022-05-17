@@ -1,6 +1,7 @@
 package com.usf.screen;
 
 import com.usf.DAO.ProdutoDAO;
+import com.usf.DAO.VendaDAO;
 import com.usf.model.Produto;
 import com.usf.model.Venda;
 
@@ -9,6 +10,7 @@ import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -28,6 +30,7 @@ public class TelaCadastraVenda extends JFrame {
         this.setSize(550, 500);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+
         botaoVoltaTelaInicial.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -57,12 +60,6 @@ public class TelaCadastraVenda extends JFrame {
             @Override
             public void ancestorMoved(AncestorEvent event) {
 
-            }
-        });
-        botaoCadastraVenda.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Venda venda = new Venda();
             }
         });
     }

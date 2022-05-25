@@ -1,20 +1,16 @@
 package com.usf.model;
 
-import javax.swing.*;
-import java.math.BigDecimal;
-
 public class Produto {
-
     private int idProduto;
     private String nome;
     private double valor;
 
-    public int getIdProduto() {
-        return idProduto;
-    }
-
     public void setIdProduto(int idProduto) {
         this.idProduto = idProduto;
+    }
+
+    public int getIdProduto() {
+        return idProduto;
     }
 
     public String getNome() {

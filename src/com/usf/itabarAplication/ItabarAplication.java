@@ -23,8 +23,5 @@ public class ItabarAplication {
 
         JFrame frame = new MainScreen("Tela inicial");
         frame.setVisible(true);
-
-        Venda v = new Venda();
-        System.out.println(v.getDataVenda());
     }
 }

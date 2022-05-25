@@ -19,11 +19,12 @@ public class VendaDAO {
 
     public void cadastrarVenda(Venda venda){
         try{
-            String cmdsql = "insert into public.Venda(dataVenda, produtosVenda, total) values(?, ?, ?)";
+            String cmdsql = "insert into public.Venda(dataVenda, idProduto, qtd, total) values(?, ?, ?, ?)";
             PreparedStatement stmt = conecta.prepareStatement(cmdsql);
             stmt.setDate(1, Date.valueOf(String.valueOf(venda.getDataVenda())));
-            stmt.setArray(2, (Array) venda.getListaProdutos());
-            stmt.setDouble(3, venda.getTotal());
+            stmt.setInt(2, venda.getIdProduto());
+            stmt.setInt(3, venda.getQtd());
+            stmt.setDouble(4, venda.getTotal());
 
             stmt.execute();
 

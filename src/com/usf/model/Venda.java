@@ -10,6 +10,10 @@ public class Venda {
     private int idVenda;
     private LocalDate dataVenda = LocalDate.now();
     private ArrayList<Produto> listaProdutos;
+
+    private int qtd;
+
+    private int idProduto;
     private double total;
 
     public Venda(){
@@ -48,4 +52,19 @@ public class Venda {
         this.total = total;
     }
 
+    public int getIdProduto() {
+        return idProduto;
+    }
+
+    public void setIdProduto(int idProduto) {
+        this.idProduto = idProduto;
+    }
+
+    public int getQtd() {
+        return qtd;
+    }
+
+    public void setQtd(int qtd) {
+        this.qtd = qtd;
+    }
 }

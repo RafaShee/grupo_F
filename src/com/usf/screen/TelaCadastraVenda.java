@@ -12,6 +12,7 @@ import javax.swing.event.AncestorListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +21,6 @@ public class TelaCadastraVenda extends JFrame {
     private JComboBox produtoComboBox;
     private JSpinner qtdSpinner;
     private JPanel telaCadastro;
-    private JTable table1;
     private JButton botaoAddProduto;
     private JButton botaoCadastraVenda;
 
@@ -77,6 +77,10 @@ public class TelaCadastraVenda extends JFrame {
 
                 venda.getListaProdutos().add(produto);
 
+                venda.setIdProduto(venda.getListaProdutos().get(0).getIdProduto());
+                venda.setQtd((Integer) qtdSpinner.getValue());
+                venda.setTotal(venda.getListaProdutos().get(0).getValor() * venda.getQtd());
+
                 produtoVenda.setValor(produto.getValor());
                 produtoVenda.setNome(produto.getNome());
                 produtoVenda.setQtd((Integer) qtdSpinner.getValue());
@@ -99,6 +103,24 @@ public class TelaCadastraVenda extends JFrame {
                     System.out.println(produtoVenda1.getQtd());
                     System.out.println(produtoVenda1.getTotal());
                 }
+            }
+        });
+
+
+        botaoCadastraVenda.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                try{
+
+                    VendaDAO dao = new VendaDAO();
+                    dao.cadastrarVenda(venda);
+
+                    JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
+                } catch (Exception ErroSql){
+                    JOptionPane.showMessageDialog(null, "Erro ao cadastrar" + ErroSql);
+                }
+
             }
         });
     }
